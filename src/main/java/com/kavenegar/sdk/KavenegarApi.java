@@ -4,27 +4,39 @@
  */
 package com.kavenegar.sdk;
 
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonPrimitive;
 import com.kavenegar.sdk.enums.MessageType;
 import com.kavenegar.sdk.excepctions.ApiException;
 import com.kavenegar.sdk.excepctions.BaseException;
 import com.kavenegar.sdk.excepctions.HttpException;
-import com.kavenegar.sdk.models.*;
+import com.kavenegar.sdk.models.AccountConfigResult;
+import com.kavenegar.sdk.models.AccountInfoResult;
+import com.kavenegar.sdk.models.CountInboxResult;
+import com.kavenegar.sdk.models.CountOutboxResult;
+import com.kavenegar.sdk.models.CountPostalCodeResult;
+import com.kavenegar.sdk.models.ReceiveResult;
+import com.kavenegar.sdk.models.SendResult;
+import com.kavenegar.sdk.models.StatusLocalMessageIdResult;
+import com.kavenegar.sdk.models.StatusResult;
 import com.kavenegar.sdk.utils.StringUtils;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import cz.msebera.android.httpclient.NameValuePair;
+import cz.msebera.android.httpclient.client.entity.UrlEncodedFormEntity;
+import cz.msebera.android.httpclient.client.methods.CloseableHttpResponse;
+import cz.msebera.android.httpclient.client.methods.HttpPost;
+import cz.msebera.android.httpclient.impl.client.CloseableHttpClient;
+import cz.msebera.android.httpclient.impl.client.HttpClients;
+import cz.msebera.android.httpclient.message.BasicNameValuePair;
+import cz.msebera.android.httpclient.util.EntityUtils;
 
 
 /**
